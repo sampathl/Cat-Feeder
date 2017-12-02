@@ -1,7 +1,7 @@
 ##### TODO
 
-[ ] Setup raspberry pi backend server.
-[ ] Setup frontend sever.
+- [ ] Setup raspberry pi backend server..
+- [ ] Setup frontend sever.
 
 
 ##### Description
