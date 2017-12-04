@@ -142,7 +142,7 @@ MongoClient.connect(url , function(err, db){
   assert.equal(null, err);
   //console.log("Successfully connected to the db server");
 
-  db.collection('catfeeders').find({"catwt":{$exists : true}}).toArray(function(err, docs){
+  db.collection('catfeeders').find({"catwt":{$exists : true, $ne:''}}).toArray(function(err, docs){
 
     //console.log(docs);
     var msg = [];
@@ -155,8 +155,9 @@ MongoClient.connect(url , function(err, db){
       msg.push(doc);
 
     });
-    db.close();
     res.json(msg);
+    db.close();
+
   });
   console.log("Called find()");
 });
