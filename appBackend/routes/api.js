@@ -2,7 +2,8 @@ var express = require('express');
 var router = express.Router();
 var MongoClient = require('mongodb').MongoClient;
   assert = require('assert');
-var url = "mongodb://localhost:27017/catBistro";
+//var url = "mongodb://localhost:27017/catBistro";
+const url = 'mongodb://54.241.150.45:27017,13.56.58.166:27018,54.215.228.194:27019/catBistro?replicaSet=logdb-replica-set';
 //const feedCat = require('../models/catfeeder.js');
 const catBistro = require('../models/catfeeder.js');
 
