@@ -77,8 +77,10 @@ router.post('/feedcat', function(req, res, next) {
 
 });
 
+
+
 /* GET last feed details from DB. */
-router.get('/getfeedreport', function(req, res, next){
+router.get('/getData', function(req, res, next){
 
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
@@ -90,12 +92,44 @@ router.get('/getfeedreport', function(req, res, next){
   MongoClient.connect(url, function(err, db) {
   if (err) throw err;
   //db.collection("catfeeders").findOne({"catwt":{$exists : true, $ne:''}}, function(err, result) {
-    db.collection("catfeeders").findOne({"catwt":{$exists : true}}, function(err, result) {
+    db.collection("catfeeders").findOne({}, function(err, result) {
     if (err) throw err;
     console.log(result);
     db.close();
   });
 });
+
+
+})
+
+
+
+
+
+
+
+
+
+
+/* GET last feed details from DB. */
+router.get('/getfeedreport', function(req, res, next){
+
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,contenttype'); // If needed
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  //res.render('index', {body: 'Here is data from database.'});
+  //res.status(200).send('Getting past feed data.')
+
+//   MongoClient.connect(url, function(err, db) {
+//   if (err) throw err;
+//   //db.collection("catfeeders").findOne({"catwt":{$exists : true, $ne:''}}, function(err, result) {
+//     db.collection("catfeeders").findOne({"catwt":{$exists : true}}, function(err, result) {
+//     if (err) throw err;
+//     console.log(result);
+//     db.close();
+//   });
+// });
 
 MongoClient.connect(url , function(err, db){
   assert.equal(null, err);
