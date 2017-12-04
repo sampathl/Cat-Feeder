@@ -79,7 +79,7 @@ router.post('/feedcat', function(req, res, next) {
 
 
 
-/* GET last feed details from DB. */
+/* GET all feed details from DB. */
 router.get('/getData', function(req, res, next){
 
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -89,24 +89,31 @@ router.get('/getData', function(req, res, next){
   //res.render('index', {body: 'Here is data from database.'});
   //res.status(200).send('Getting past feed data.')
 
-  MongoClient.connect(url, function(err, db) {
-  if (err) throw err;
-  //db.collection("catfeeders").findOne({"catwt":{$exists : true, $ne:''}}, function(err, result) {
-    db.collection("catfeeders").findOne({}, function(err, result) {
-    if (err) throw err;
-    console.log(result);
-    db.close();
+  MongoClient.connect(url , function(err, db){
+    assert.equal(null, err);
+    //console.log("Successfully connected to the db server");
+
+    db.collection('catfeeders').find({}).toArray(function(err, docs){
+
+      //console.log(docs);
+      var msg = [];
+
+      docs.forEach(function(doc){
+        //msg.push(doc.feedername);
+        //msg.push(doc.lastfeedtime);
+        //msg.push(doc.lastfoodwt);
+        //msg.push(doc.catwt);
+        msg.push(doc);
+
+      });
+      db.close();
+      res.json(msg);
+    });
+    console.log("Called find()");
   });
-});
 
 
 })
-
-
-
-
-
-
 
 
 
