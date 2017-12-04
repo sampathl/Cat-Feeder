@@ -7,8 +7,8 @@ var bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 //connect to mongo.
-mongoose.connect('mongodb://localhost:27017/catBistro');
-mongoose.Promise = global.Promise;
+//mongoose.connect('mongodb://localhost:27017/catBistro');
+//mongoose.Promise = global.Promise;
 
 var index = require('./routes/index');
 var users = require('./routes/users');
