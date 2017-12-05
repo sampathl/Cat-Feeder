@@ -144,7 +144,7 @@ MongoClient.connect(url , function(err, db){
 
   db.collection('catfeeders').find({"catwt":{$exists : true, $ne:''}}).toArray(function(err, docs){
 
-    //console.log(docs);
+    console.log(docs);
     var msg = [];
 
     docs.forEach(function(doc){
