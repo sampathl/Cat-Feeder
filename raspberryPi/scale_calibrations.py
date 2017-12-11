@@ -22,7 +22,7 @@ try:
 	result = hx_cat.reset()
 	result2 = hx_food.reset()
 
-        if result && result2:
+        if result and result2:
 		print('Ready to calibrate')
         else:
                 print('not ready')
