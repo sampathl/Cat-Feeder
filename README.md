@@ -30,6 +30,13 @@ The repository contains all code related to the CatFeeder prototype.
 #### Bugs
 - We will be using Github Issues for bugs.
 
+####FUTURE SCOPE
+- After collecting enough amount of data analytics can be provided and suggestions on the feed quantity and timings can be provide to the user.
+- Developing mobile applications for ease of use. 
+- Feeder can be made more accurate, informative if sensors are implemented for the feed quantity available, real time feeding cat patters.  
+- Converting the pie to a circuit which caters the required functionalities and minimizing the costs. 
+
+
 
 #### License Information.
 
