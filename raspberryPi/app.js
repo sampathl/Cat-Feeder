@@ -29,7 +29,7 @@ MongoClient.connect(url, function(err, _db){
 						console.log("d", d)						
 						var TIME_TO_FEED = d.getUTCHours() + ":" + d.getUTCMinutes() + " " + (d.getMonth()+1) +"/" +d.getDate() + "/" + d.getFullYear();
 						console.log(TIME_TO_FEED);
-						exec( "echo 'python /home/pi/project/moter.py' | at " + TIME_TO_FEED, function(err, stdout, stdin){
+						exec( "echo 'python /home/pi/project/Project-Team-16/raspberryPi/catBistro.py' " + data[0].feedwt + " | at " + TIME_TO_FEED, function(err, stdout, stdin){
 							console.log('stderr', err);
 							console.log('stdout', stdout);
 						});
