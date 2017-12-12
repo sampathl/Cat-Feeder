@@ -20,6 +20,12 @@ Software:
 	scale_calibrations.py is used during set up to calibrate both food and cat scales
 	hx711_python_2.py includes class definition needed to control HX711
 	catBistro.py script will automatically get called from cron job that is scheduled
+	
+	Requires Nodejs 4.0.0. or higher
+	app.js will communicate with MongoDB running remote on AWS server
+	Will keep listening for any new shceduling events and will also send analytcal data 
+	like cat's last seen weight received from Catdeefer.
+	require $ npm install before running for firsttime
 
 License:
 
