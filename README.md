@@ -1,6 +1,6 @@
 
 
-##### Description
+#### Description
 
 The repository contains all code related to the CatFeeder prototype.
 
