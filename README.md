@@ -22,13 +22,13 @@ We have tried to use the open source software at almost all the places in our de
 The following is the stack used for the prototype.
 
 Web server :
-1. Node js and React.js library.
+- Node js and React.js library.
 
 Datastore :
-1. MongoDB setup in a three node cluster with high availability and replication.
+- MongoDB setup in a three node cluster with high availability and replication.
 
 Raspberry Pi :
-1. Raspbian OS (Jesse)
+- Raspbian OS (Jesse)
 
 
 #### Bugs
