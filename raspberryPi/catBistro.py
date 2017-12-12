@@ -8,6 +8,7 @@ import time
 from time import sleep
 import sys
 import datetime
+from pymongo import MongoClient
 
 # ensure that we have the amount of cat food passed in
 if len(sys.argv) != 2:
@@ -80,17 +81,20 @@ while (cat_weight < 1):
 	cat_weight = hx_cat.get_weight_mean(99)
 
 # get the current time
-date = datetime.datetime.now().isoformate()
+date = datetime.datetime.now().isoformat()
 
-# TODO: send data to server in the following format
-# {
-# "feedername": "Patio-1",
-# "feedtime" : "2012-04-23T18:25:43.511Z",
-# "feedwt": 23,
-# "lastfeedtime": "2012-04-23T18:25:43.511Z",
-# "lastfoodwt": 10,
-# "catwt": 17
-# }
+# TODO: test sending data to server
+#
+#client = MongoClient("mongodb://54.241.150.45:27017/")
+#db=client.catBistro
+#
+#db.insert_one(
+#	data = {
+#		"lastfeedtime" : date 
+#		"lastfoodwt": str(feed_amount)
+#		"catwt": str(cat_weight)
+#	}
+#)
 
 # clean up all GPIO pins
 finally:
